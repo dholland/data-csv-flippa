@@ -1,10 +1,12 @@
 {
   "name": "data-csv-flippa",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple node and express app to save listings from flippa.com as a CSV file",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

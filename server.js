@@ -16,7 +16,10 @@ app.get("/all", (req, res) => {
 app.get('/create-csv', (req, res) => {
   console.log("Creating JSON");
   console.log(req.query.status)
+
+  //set file name based on filter type
   const fileName = req.query.status
+
   //Get all the listings from flippa
   /**
    * @param {string} status
@@ -27,6 +30,7 @@ app.get('/create-csv', (req, res) => {
     return saveFiles(data, fileName)
 
   }).then(file => {
+    //send user the file
     res.download(`${__dirname}/${file}`)
   })
 })
@@ -45,6 +49,6 @@ app.get('/download', (req, res) => {
 })
 
 
-app.listen(process.env.PORT || 9000, () => {
+app.listen(process.env.PORT || 8000, () => {
   console.log(`Listening on ${process.env.PORT}`);
 })

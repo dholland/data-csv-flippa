@@ -5,7 +5,7 @@ const fs = require('fs')
 const saveFiles = (data, name) => {
   try {
     const csv = parse(data);
-    fs.writeFileSync(`./data/${name}.csv`, csv, (err) => {
+    fs.writeFileSync(`./data/${name}-listings.csv`, csv, (err) => {
       if (err) throw err;
       console.log("CSV FILE SAVED");
     })
@@ -15,7 +15,7 @@ const saveFiles = (data, name) => {
   }
 
   try {
-    fs.writeFile(`./data/${name}.json`, JSON.stringify(data), (err) => {
+    fs.writeFile(`./data/${name}-listings.json`, JSON.stringify(data), (err) => {
       if (err) throw err;
       console.log("JSON FILE SAVED");
     })
@@ -23,7 +23,7 @@ const saveFiles = (data, name) => {
     console.error(err);
   }
 
-  return `/data/${name}.csv`
+  return `/data/${name}-listings.csv`
 }
 
 module.exports = { saveFiles }
